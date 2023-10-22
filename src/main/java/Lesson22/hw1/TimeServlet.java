@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
  /washington - время в Вашингтоне
  /beijing - время в Пекине
  При решении использовать оба варианта настройки (xml и аннотации).
-
  */
 @WebServlet(name = "TimeServlet", urlPatterns = { "/minsk", "/washington", "/beijing" })
 public class TimeServlet extends HttpServlet {
