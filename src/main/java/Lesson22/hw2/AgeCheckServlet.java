@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  Создать сервлет который на вход принимает возраст, а в ответе возвращает
- информацию, совершеннолетний или нет .
+ информацию, совершеннолетний или нет  .
  */
 @WebServlet("/age-check")
 public class AgeCheckServlet extends HttpServlet {

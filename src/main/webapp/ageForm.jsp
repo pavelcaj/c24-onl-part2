@@ -12,7 +12,7 @@
     function submitAge() {
         var age = document.getElementById("ageInput").value;
         if (age === "" || isNaN(age)) {
-            document.getElementById("result").innerHTML = "Please enter the correct age.";
+            document.getElementById("result").innerHTML = "Please enter the correct age .";
         } if(age>=18) {
             document.getElementById("result").innerHTML = "Adult";
         }else{
