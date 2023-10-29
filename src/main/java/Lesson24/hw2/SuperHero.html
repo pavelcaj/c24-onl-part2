@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Железный Человек</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://gas-kvas.com/grafic/uploads/posts/2023-09/1695979374_gas-kvas-com-p-kartinki-mstiteli-27.jpg'); /* Устанавливаем фотографию в качестве фона */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            background-image: linear-gradient(45deg, #ff5500, #00aaff);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            text-align: center;
+            animation: gradientAnimation 4s linear infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .superhero-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .superhero-card {
+            width: 300px;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s;
+        }
+
+        .superhero-card:hover {
+            transform: scale(1.05);
+        }
+
+        .superhero-image {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        p {
+            line-height: 1.4;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="superhero-container">
+    <div class="superhero-card">
+        <h1>Капитан Америка</h1>
+        <img class="superhero-image"
+             src="https://phonoteka.org/uploads/posts/2021-05/1621993736_45-phonoteka_org-p-kapitan-amerika-art-krasivo-50.jpg"
+             alt="Капитан Америка">
+        <p>Имя супергероя: Стивен Роджерс (Капитан Америка)</p>
+        <p>Суперспособности: Сверхчеловеческая сила, скорость и выносливость</p>
+
+    </div>
+    <div class="superhero-card">
+        <h1>Железный Человек</h1>
+        <img class="superhero-image"
+             src="https://oir.mobi/uploads/posts/2022-07/1658217882_12-oir-mobi-p-arti-zheleznii-chelovek-13.jpg"
+             alt="Железный Человек">
+        <p>Имя супергероя: Тони Старк (Железный Человек)</p>
+        <p>Суперспособности: Бронекостюм с оружием и средствами полета</p>
+        <p>Происхождение: Гений-миллиардер-филантроп-изобретатель</p>
+        <p>Враги: Мандалорец, Мангуст, Умбаку и другие</p>
+        <p>Альянс: Член Мстителей и основатель Лиги Справедливости</p>
+        <p>Друзья: Капитан Америка, Черная Вдова, Тор и Халк</p>
+        <p>Родной город: Лос-Анджелес, США</p>
+
+    </div>
+    <div class="superhero-card">
+        <h1>Черная Вдова</h1>
+        <img class="superhero-image" src="https://skidka.ua/upload/iblock/7af/7aff3a838e6f1916f3578ab356c54c7f.jpg"
+             alt="Черная Вдова">
+        <p>Имя супергероини: Наташа Романофф (Черная Вдова)</p>
+        <p>Суперспособности: Мастер шпионских и боевых навыков</p>
+
+    </div>
+</div>
+<script>
+
+    const container = document.querySelector(".superhero-container");
+    let currentIndex = 0;
+
+    container.addEventListener("wheel", (event) => {
+        if (event.deltaY > 0) {
+            currentIndex = (currentIndex + 1) % 3;
+        } else {
+            currentIndex = (currentIndex - 1 + 3) % 3;
+        }
+        rearrangeCards();
+    });
+
+    function rearrangeCards() {
+
+        const cards = document.querySelectorAll(".superhero-card");
+        const order = [0, 1, 2];
+
+
+        cards.forEach((card, index) => {
+
+            card.style.order = order[(index + currentIndex) % 3];
+            card.style.transitionDuration = "0.1s";
+        });
+    }
+
+
+    rearrangeCards();
+</script>
+</body>
+</html>
