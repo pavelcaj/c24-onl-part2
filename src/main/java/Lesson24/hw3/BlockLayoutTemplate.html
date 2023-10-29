@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://sobesednik.net/Gallery/_data/i/upload/2020/04/10/20200410135941-1215f71c-xx.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px;
+            margin-left: 200px;
+        }
+
+        aside {
+            width: 200px;
+            height: 100%;
+            background-color: #eee;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.8s;
+        }
+
+        aside li {
+            margin: 10px;
+        }
+
+        aside a {
+            text-decoration: none;
+            color: #333;
+            font-size: 25px;
+        }
+
+        label {
+            display: block;
+            cursor: pointer;
+            font-size: 30px;
+            user-select: none;
+        }
+
+        label:hover {
+            background-color: transparent;
+        }
+
+        label span {
+            pointer-events: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Добро пожаловать на сайт!</h1>
+</header>
+<nav>
+    <ul>
+        <li>
+            <input type="checkbox" id="menuToggle">
+            <label for="menuToggle" id="menuToggleLabel">☰</label>
+        </li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <h2>Раздел 1</h2>
+        <p>Текст описания раздела 1.</p>
+    </section>
+    <section>
+        <h2>Раздел 2</h2>
+        <p>Текст описания раздела 2.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 Название Твоего Сайта</p>
+</footer>
+<aside>
+
+    <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+</aside>
+<script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const aside = document.querySelector("aside");
+    const main = document.querySelector("main");
+
+    menuToggle.addEventListener("change", function () {
+        if (this.checked) {
+            aside.style.left = "0";
+        } else {
+            aside.style.left = "-200px";
+        }
+    });
+
+    main.addEventListener("click", function () {
+        if (menuToggle.checked) {
+            menuToggle.checked = false;
+            aside.style.left = "-200px";
+        }
+    });
+</script>
+</body>
+</html>
