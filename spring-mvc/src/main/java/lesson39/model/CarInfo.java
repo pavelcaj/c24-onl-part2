@@ -1,14 +1,26 @@
 package lesson39.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Min;
+
 public class CarInfo {
+    @NotBlank(message = "Model name is required")
     private String modelName;
+
+    @NotBlank(message = "Engine type is required")
     private String engineType;
+
+    @Min(value = 1, message = "Horsepower must be greater than 0")
     private int horsepower;
+
+    @Min(value = 0, message = "Acceleration must be non-negative")
     private double acceleration;
+
+    @Min(value = 1, message = "Max speed must be greater than 0")
     private int maxSpeed;
 
     public CarInfo() {
-        // Пустой конструктор для Spring MVC
+
     }
 
     public CarInfo(String modelName, String engineType, int horsepower, double acceleration, int maxSpeed) {
