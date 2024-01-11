@@ -1,4 +1,4 @@
-package lesson42.Controller;
+package lesson42.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ControllerHello {
+public class HelloController {
 
     @GetMapping("/")
     public String showForm() {
